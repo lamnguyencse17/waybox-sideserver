@@ -2,9 +2,11 @@
   "name": "workspace",
   "version": "1.0.0",
   "description": "waybox-sideserver",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "tsc & node .",
+    "dev": "nodemon ./src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,37 @@
   "bugs": {
     "url": "https://github.com/lamnguyencse17/waybox-sideserver/issues"
   },
-  "homepage": "https://github.com/lamnguyencse17/waybox-sideserver#readme"
+  "homepage": "https://github.com/lamnguyencse17/waybox-sideserver#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.11.17",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pm2": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/eslint-config-prettier": "^6.11.0",
+    "@types/express": "^4.17.11",
+    "@types/mongoose": "^5.10.3",
+    "@types/node": "^14.14.31",
+    "@types/passport": "^1.0.6",
+    "@types/passport-jwt": "^3.0.5",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
+  }
 }
