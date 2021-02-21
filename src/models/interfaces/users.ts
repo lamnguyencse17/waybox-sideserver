@@ -6,3 +6,8 @@ export interface IUser extends Document {
 	phone: string;
 	auth: IAuth;
 }
+
+export interface IStrippedUser {
+	name: string;
+	phone: string;
+}

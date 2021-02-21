@@ -1,9 +1,18 @@
 import express from "express";
-const app = express();
-const port = 5000;
+import mainRouter from "./routers/router";
+import { initMongoose } from "./init";
+import morgan from "morgan";
+import cors from "cors";
 
-app.get("/", (_, res) => {
-  res.status(200).send();
-});
+const app = express();
+const port = 3000;
+
+initMongoose();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(morgan("tiny"));
+app.use(cors());
+app.use("/", mainRouter);
 
 app.listen(port, () => console.log(`Running on port ${port}`));
